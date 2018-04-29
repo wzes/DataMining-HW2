@@ -1,0 +1,6 @@
+Cost: 21809 ms
+Cost: 242 ms
+Cost: 141 ms
+Cost: 194 ms
+Cost: 91 ms
+Cost: 79 ms
