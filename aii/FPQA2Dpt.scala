@@ -11,7 +11,7 @@ import org.apache.spark.sql.SparkSession
   * @author Create by xuantang
   * @date on 4/22/18
   */
-object FrequencyMiniB {
+object FPQA2Dpt {
   val AppName = "FrequencyMini"
   val Master = "local[*]"
   val Memory = "spark.executor.memory"
@@ -30,7 +30,7 @@ object FrequencyMiniB {
 
     // process data
     val transactions: RDD[Array[String]] = data.map(s => s.trim.replace(" ", "").split(','))
-    val arr =  Array(2, 4, 8, 16, 32, 64)
+    val arr =  Array(2, 4, 6, 8, 10, 12)
     for (minSupport <- arr) {
       // cal time
       val start = System.currentTimeMillis()

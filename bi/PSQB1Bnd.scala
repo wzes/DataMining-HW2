@@ -9,7 +9,7 @@ import org.apache.spark.sql.SparkSession;
   * @author Create by xuantang
   * @date on 4/23/18
   */
-object PSQB1Dnb {
+object PSQB1Bnd {
   val AppName = "FrequencyMini"
   val Master = "local[*]"
   val Memory = "spark.executor.memory"
@@ -29,7 +29,7 @@ object PSQB1Dnb {
     val rdd1: RDD[Array[String]] = data.map(line => line.trim.split(";"))
     val sequences: RDD[Array[Array[String]]] = rdd1.map(row => row.iterator.map(item => item.trim.split(" ")).toArray)
 
-    val arr =  Array(2, 4, 6, 8, 10, 12)
+    val arr =  Array(2, 4, 8, 16, 32, 64)
     for (minSupport <- arr) {
       // cal time
       val start = System.currentTimeMillis()

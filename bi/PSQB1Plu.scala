@@ -29,7 +29,7 @@ object PSQB1Plu {
     val rdd1: RDD[Array[String]] = data.map(line => line.trim.split(";"))
     val sequences: RDD[Array[Array[String]]] = rdd1.map(row => row.iterator.map(item => item.trim.split(" ")).toArray)
 
-    val arr =  Array(2, 4, 6, 8, 10, 12)
+    val arr =  Array(2, 4, 8, 16, 32, 64)
     for (minSupport <- arr) {
       // cal time
       val start = System.currentTimeMillis()
